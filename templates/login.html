@@ -1,0 +1,17 @@
+{% include "_header.html" %}
+<form action="/auth/login" method="POST" class="post-form">
+  <h2>관리자</h2>
+  <div class="form-group">
+    <label for="username">사용자 이름</label>
+    <input type="text" id="username" name="username" required />
+  </div>
+  <div class="form-group">
+    <label for="password">비밀번호</label>
+    <input type="password" id="password" name="password" required />
+  </div>
+  <button type="submit">로그인하기</button>
+</form>
+<p style="text-align: center; margin-top: 1rem;">
+  계정이 없으신가요? 아쉽게 됐슈...
+</p>
+{% include "_footer.html" %}

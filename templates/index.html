@@ -1,0 +1,11 @@
+{% include "_header.html" %}
+<div class="post-list">
+  {% for post in posts %}
+  <article class="post-item">
+    <h2><a href="/posts/{{ post.id }}">{{ post.question }}</a></h2>
+    <p>{{ post.question[:150] }}...</p>
+    <small>{{ post.created_at.strftime('%Y-%m-%d') }}</small>
+  </article>
+  {% endfor %}
+</div>
+{% include "_footer.html" %}

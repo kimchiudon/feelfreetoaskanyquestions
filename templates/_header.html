@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css?v=3">
+  </head>
+  <body>
+    <header>
+      <h1><a href="/posts">Feel Free to Ask Any Question</a></h1>
+      <nav>
+        <a href="/posts/new" class="new-post-btn">New Post</a>
+
+        {% if user %}
+          <span class="nav-user">{{ user.username }}</span>
+          <a href="/auth/logout" class="nav-link">Logout</a>
+        {% else %}
+          <a href="/auth/login" class="nav-link">Login</a>
+        {% endif %}
+      </nav>
+    </header>
+
+    <main>

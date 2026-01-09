@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+psycopg2-binary
+jinja2
+python-dotenv
+python-multipart
+bcrypt
+itsdangerous

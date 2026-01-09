@@ -1,0 +1,45 @@
+{% include "_header.html" %}
+
+<article class="post-detail">
+  <h1>{{ post.question }}</h1>
+  <small>{{ post.created_at.strftime('%Y-%m-%d') }}</small>
+
+  <div class="post-content">
+    {{ post.content | replace('\n', '<br />') | safe }}
+  </div>
+</article>
+
+<section class="comments-section">
+  <h3>Comments</h3>
+
+  <div class="comment-list">
+    {% if comments %}
+      {% for comment in comments %}
+      <div class="comment-item">
+        <p class="comment-content">{{ comment.content }}</p>
+        <small>
+          By <strong>{{ comment.user.username }}</strong> on {{ comment.created_at.strftime('%Y-%m-%d') }}
+        </small>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p>답변을 기다려주십시오.</p>
+    {% endif %}
+  </div>
+
+  {% if user %}
+  <form action="/posts/{{ post.id }}/comments" method="POST" class="comment-form">
+    <h4>Leave a Comment</h4>
+    <div class="form-group">
+      <textarea name="content" rows="4" placeholder="답변을 입력하십시오" required></textarea>
+    </div>
+    <button type="submit">Submit Comment</button>
+  </form>
+  {% else %}
+  <p><a href="/auth/login">Login</a> to leave a comment.</p>
+  {% endif %}
+</section>
+
+<a href="/posts" class="back-link">&larr; Back to Home</a>
+
+{% include "_footer.html" %}

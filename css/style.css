@@ -1,0 +1,253 @@
+/* ===== 기본 ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+  background-color: #f2f3f5;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* ===== 헤더 ===== */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ===== 메인 박스 ===== */
+main {
+  max-width: 860px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== 글 목록 카드 ===== */
+.post-item {
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.2rem;
+  border-radius: 16px;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.post-item:hover {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+.post-item h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.post-item h2 a {
+  color: #111;
+  text-decoration: none;
+}
+
+.post-item h2 a:hover {
+  text-decoration: underline;
+}
+
+.post-item p {
+  margin: 0.2rem 0 0.6rem;
+  color: #555;
+}
+
+.post-item small {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ===== 상세 페이지 ===== */
+.post-detail {
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+}
+
+.post-detail h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.4rem;
+}
+
+.post-detail small {
+  color: #888;
+}
+
+.post-detail .post-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== 새 글 버튼 ===== */
+.new-post-btn {
+  background: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* ===== 폼 ===== */
+.post-form {
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+}
+
+.post-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.post-form label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.post-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.post-form textarea:focus {
+  outline: none;
+  border-color: #111;
+}
+
+.post-form button {
+  background: #111;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== 답변 박스 ===== */
+.answer-section {
+  margin-top: 1.2rem;
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+}
+
+/* ===== 댓글 섹션 (추가 + 기존 톤에 맞게 정리) ===== */
+.comments-section {
+  margin-top: 3rem;
+  border-top: 1px solid #e5e7eb; /* 기존 톤 통일 */
+  padding-top: 2rem;
+}
+
+.comment-list .comment-item {
+  background: #fafafa;           /* 기존 카드 톤 */
+  border: 1px solid #e5e7eb;     /* 기존 보더 톤 */
+  padding: 1rem 1.2rem;
+  border-radius: 16px;           /* 기존 둥글기 통일 */
+  margin-bottom: 1rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.comment-list .comment-item:hover {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+.comment-content {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: #222;
+}
+
+.comment-item small {
+  color: #888; /* 기존 small 톤 */
+  font-size: 0.9rem;
+}
+
+/* 댓글 작성 폼 */
+.comment-form {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.comment-form textarea:focus {
+  outline: none;
+  border-color: #111;
+}
+
+/* comment-form 안에 버튼이 있다면 기존 버튼 톤 유지 */
+.comment-form button {
+  background: #111;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== 뒤로가기 ===== */
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== 푸터 ===== */
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+footer p {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
